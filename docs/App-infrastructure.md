@@ -5,7 +5,9 @@
 * S3 bucket for hosting frontend.
 * RDS database running Postgres.
 
+### high-level overview of the infrastructure
 
+![overview](./screenshots/infrastructure_diagram.png)
 
 ### screenshots:
 

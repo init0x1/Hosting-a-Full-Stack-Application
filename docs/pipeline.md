@@ -4,6 +4,10 @@
 - It is used to automatically deploy the website to the AWS.
 - It is set to automatically execute once the code is being pushed into the main Github project.
 
+- Pipeline diagram
+  ![Pipeline diagram](./screenshots/pipline_inf.png)
+
+
 - Pipline main steps
   ![pipline - main steps](./screenshots/cicleci_main_steps.PNG)
 
