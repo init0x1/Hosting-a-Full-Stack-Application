@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "engines": {
-    "node": "16.0.0"
+    "node": "16.15.0"
   },
   "main": "src/server.ts",
   "scripts": {
@@ -12,7 +12,7 @@
     "dev": "npx ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "chmod +x ./bin/deploy.sh && ./bin/deploy.sh",
+    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy && eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD PORT_DB=$PORT_DB PORT=$PORT POSTGRES_HOST=$POSTGRES_HOST RDS_DIALECT=$RDS_DIALECT AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION AWS_PROFILE=$AWS_PROFILE AWS_BUCKET=$AWS_BUCKET URL=$URL JWT_SECRET=$JWT_SECRET --profile default",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && bestzip Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

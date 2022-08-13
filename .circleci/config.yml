@@ -9,11 +9,11 @@ jobs:
   build:
     docker:
       # the base image can run most needed actions with orbs
-      - image: "cimg/node:14.15"
+      - image: "cimg/node:16.15"
     steps:
       # install node and checkout code
       - node/install:
-          node-version: '14.15'         
+          node-version: '16.15'         
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
@@ -51,7 +51,7 @@ jobs:
       # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
-          node-version: '14.15' 
+          node-version: '16.15' 
       - eb/setup
       - aws-cli/setup
       - checkout
