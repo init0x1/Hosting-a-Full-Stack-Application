@@ -5,7 +5,7 @@
 - It is set to automatically execute once the code is being pushed into the main Github project.
 
 - Pipeline diagram
-  ![Pipeline diagram](./screenshots/pipline_inf.png)
+  ![Pipeline diagram](./screenshots/pipline_info.png)
 
 
 - Pipline main steps
